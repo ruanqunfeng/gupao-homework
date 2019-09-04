@@ -13,7 +13,7 @@ public class SeriableSingleton implements Serializable {
     }
 
 
-    /*private Object readResolve() {
+    private Object readResolve() {
         return instance;
-    }*/
+    }
 }

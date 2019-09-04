@@ -15,6 +15,8 @@ public class LazySingleton {
                     //2.初始化对象
                     //3.设置lazy指向刚分配的内存地址
                     //4.初次访问对象
+                    // 不加volatile会有重排序的问题，可能的执行顺序是1->3->2
+                    // 线程二访问时发现instance已经不是null了（但是没有初始化），所以线程二会直接返回instance，然后使用报错。
                 }
             }
         }
