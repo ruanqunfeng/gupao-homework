@@ -126,8 +126,12 @@ public class GPDispatcherServlet extends HttpServlet {
         return null;
     }
 
-    //url传过来的参数都是String类型的，HTTP是基于字符串协议
-    //只需要把String转换为任意类型就好
+    /**
+     * 类型转换，暂时只实现了Integer的转换
+     * @param type
+     * @param value
+     * @return
+     */
     private Object convert(Class<?> type,String value){
         if(Integer.class == type){
             return Integer.valueOf(value);
@@ -310,9 +314,13 @@ public class GPDispatcherServlet extends HttpServlet {
     }
 
     public class HandlerMapping {
+        // 对象
         private Object obj;
+        // 需要调用的方法
         private Method method;
+        // 方法对应的url
         private String url;
+        // 方法中的参数与对应的下标
         protected Map<String, Integer> paramIndexMapping;
 
         public HandlerMapping(Object obj, Method method, String url) {
