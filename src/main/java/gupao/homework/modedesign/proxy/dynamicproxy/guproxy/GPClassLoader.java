@@ -19,9 +19,12 @@ public class GPClassLoader extends ClassLoader {
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         String className = GPClassLoader.class.getPackage().getName() + "." + name;
         System.out.println("包路径：" + className);
+        System.out.println("name = " + name);
 
         if (classPathFile != null) {
-            File classFile = new File(classPathFile, name.replaceAll("\\.", "/") + ".class");
+            name = name.replaceAll("\\.", "/");
+            System.out.println("转换后的包路径：" + name);
+            File classFile = new File(classPathFile, name + ".class");
             if (classFile.exists()) {
                 FileInputStream in = null;
                 ByteArrayOutputStream out = null;
