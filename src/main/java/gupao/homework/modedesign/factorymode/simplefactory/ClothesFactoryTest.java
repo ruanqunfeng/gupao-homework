@@ -1,10 +1,10 @@
 package gupao.homework.modedesign.factorymode.simplefactory;
 
 public class ClothesFactoryTest {
-    public static IClothes create(Class c) {
+    public static IClothes create(Class<? extends IClothes> c) {
         try {
             if (c != null) {
-                return  (IClothes)c.newInstance();
+                return  c.newInstance();
             }
         } catch (Exception e) {
             e.printStackTrace();

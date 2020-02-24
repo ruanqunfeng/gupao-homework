@@ -2,14 +2,16 @@ package gupao.homework.Spring.AOP.service;
 
 import gupao.homework.Spring.AOP.AnnotaionAspect;
 import gupao.homework.modedesign.adapter.login.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Service;
 
 
 
 @Service
+@Slf4j
 public class MemberService {
-    private final static Logger log = Logger.getLogger(AnnotaionAspect.class);
+    //private final static Logger log = Logger.getLogger(AnnotaionAspect.class);
     public Member get(long id) {
         log.info("getMemberById method ...");
         return new Member();
