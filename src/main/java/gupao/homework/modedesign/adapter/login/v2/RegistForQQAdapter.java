@@ -11,6 +11,11 @@ public class RegistForQQAdapter implements RegistAdapter,LoginAdapter {
         return false;
     }
 
+    @Override
+    public ResultMsg regist(String id, Object adapter) {
+        return null;
+    }
+
     public ResultMsg login(String id, Object adapter) {
         return null;
     }

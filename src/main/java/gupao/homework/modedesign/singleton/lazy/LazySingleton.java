@@ -9,6 +9,8 @@ public class LazySingleton {
     public static LazySingleton getInstance() {
         if (instance == null) {
             synchronized (LazySingleton.class) {
+                // 为什么还要有判断：因为当两个线程进入第一次判断，有一个阻塞在锁的时候，
+                // 随着另一个跑完，阻塞的这个还是会去创建，破坏了单例
                 if (instance == null) {
                     instance = new LazySingleton();
                     //1.分配内存给这个对象

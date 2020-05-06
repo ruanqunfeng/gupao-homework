@@ -8,5 +8,5 @@ import gupao.homework.modedesign.adapter.login.ResultMsg;
  */
 public interface RegistAdapter {
     boolean support(Object adapter);
-    ResultMsg login(String id, Object adapter);
+    ResultMsg regist(String id, Object adapter);
 }
