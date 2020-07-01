@@ -16,8 +16,4 @@ public class SeriableSingleton implements Serializable {
     private Object readResolve() {
         return instance;
     }
-
-    /*private Object readObject() {
-        return instance;
-    }*/
 }
